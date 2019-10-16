@@ -1,0 +1,9 @@
+<h2> Detalles de Sede</h2>
+
+<div *ngIf="sede">
+  <h3>{{ sede.sedeId }}</h3>
+  <h4>{{ sede.nombre }}</h4>
+  <p *ngIf="sede.estado == 0">BAJA</p>
+  <p *ngIf="sede.estado == 1">ALTA</p>
+
+</div>

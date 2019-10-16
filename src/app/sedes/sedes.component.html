@@ -9,6 +9,11 @@
             <td> {{sede.nombre}} </td>
             <td *ngIf="sede.estado == 0" class="text-danger"> BAJA </td>
             <td *ngIf="sede.estado == 1" class="text-info"> ALTA </td>
+            <td>
+                    <a [routerLink]="['/sedes', sede.sedeId]">
+                        VER
+                    </a>
+            </td>
         </tr>
         
     </tbody>
