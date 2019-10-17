@@ -1,3 +1,5 @@
+import { EstadoscitaService } from './servicios/estadoscita.service';
+import { RolesService } from './servicios/roles.service';
 import { SedesService } from './servicios/sedes.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -8,6 +10,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { SedesComponent } from './sedes/sedes.component';
 import { SedeDetallesComponent } from './sede-detalles/sede-detalles.component';
+import { RolesComponent } from './roles/roles.component';
+import { RolDetallesComponent } from './rol-detalles/rol-detalles.component';
+import { EstadoscitaComponent } from './estadoscita/estadoscita.component';
+import { EstadocitaDetallesComponent } from './estadocita-detalles/estadocita-detalles.component';
 
 @NgModule({
   declarations: [
@@ -15,14 +21,22 @@ import { SedeDetallesComponent } from './sede-detalles/sede-detalles.component';
     NavbarComponent,
     FooterComponent,
     SedesComponent,
-    SedeDetallesComponent
+    SedeDetallesComponent,
+    RolesComponent,
+    RolDetallesComponent,
+    EstadoscitaComponent,
+    EstadocitaDetallesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [SedesService],
+  providers: [
+    SedesService,
+    RolesService,
+    EstadoscitaService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

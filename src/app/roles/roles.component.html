@@ -1,0 +1,18 @@
+<h2>Roles</h2>
+<table class="table table-striped">
+    <thead>
+        <th>Nombre</th>
+        <th>Estado</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let rol of roles">
+            <td>{{ rol.nombre }}</td>
+            <td>{{ rol.estado }}</td>
+            <td>
+                <a class="btn btn-info" [routerLink]="['/roles', rol.rolId]">
+                    VER
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>

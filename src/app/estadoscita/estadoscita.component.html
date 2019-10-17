@@ -1,0 +1,20 @@
+<p>Estados de Cita</p>
+<table class="table table-striped"> 
+    <thead>
+        <th>Nombre</th>
+        <th>Estado</th>
+        <th>Color</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let estadoCita of estadosCita">
+            <td> {{ estadoCita.nombre }}</td>
+            <td> {{ estadoCita.estado }}</td>
+            <td> {{ estadoCita.color  }}</td>
+            <td>
+                <a class="btn btn-info" [routerLink]="['/estadoscita', estadoCita.estadoCitaId]">
+                        VER
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
