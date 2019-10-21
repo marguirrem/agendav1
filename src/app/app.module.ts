@@ -1,3 +1,4 @@
+import { LoginService } from './servicios/login.service';
 import { EstadoscitaService } from './servicios/estadoscita.service';
 import { RolesService } from './servicios/roles.service';
 import { SedesService } from './servicios/sedes.service';
@@ -14,6 +15,8 @@ import { RolesComponent } from './roles/roles.component';
 import { RolDetallesComponent } from './rol-detalles/rol-detalles.component';
 import { EstadoscitaComponent } from './estadoscita/estadoscita.component';
 import { EstadocitaDetallesComponent } from './estadocita-detalles/estadocita-detalles.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,17 +28,20 @@ import { EstadocitaDetallesComponent } from './estadocita-detalles/estadocita-de
     RolesComponent,
     RolDetallesComponent,
     EstadoscitaComponent,
-    EstadocitaDetallesComponent
+    EstadocitaDetallesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     SedesService,
     RolesService,
-    EstadoscitaService
+    EstadoscitaService,
+    LoginService
   ],
   bootstrap: [AppComponent]
 })

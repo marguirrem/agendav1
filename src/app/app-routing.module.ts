@@ -6,8 +6,10 @@ import { SedesComponent } from './sedes/sedes.component';
 import { SedeDetallesComponent } from './sede-detalles/sede-detalles.component';
 import { RolDetallesComponent } from './rol-detalles/rol-detalles.component';
 import { EstadoscitaComponent } from './estadoscita/estadoscita.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
+  { path: 'login', component: LoginComponent },
   { path: 'sedes', component: SedesComponent },
   { path: 'sedes/:sedeId', component: SedeDetallesComponent },
   { path: 'roles', component: RolesComponent },

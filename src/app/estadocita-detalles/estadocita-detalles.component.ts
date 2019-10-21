@@ -13,6 +13,7 @@ export class EstadocitaDetallesComponent implements OnInit {
   constructor(private route : ActivatedRoute, private estadosCitaService :EstadoscitaService) { }
 
   ngOnInit() {
+    
     this.route.paramMap.subscribe(params => {
       this.obtenerEstadoCita(params.get('estadoCitaId'));
     });
