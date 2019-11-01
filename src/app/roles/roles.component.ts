@@ -23,4 +23,12 @@ export class RolesComponent implements OnInit {
     });
   }
 
+  modalEditar(estado : boolean){
+    if (estado == true){
+      $("#editarRol").modal("show");
+    }else{
+      $("#editarRol").modal("hide");
+    }
+    
+  }
 }

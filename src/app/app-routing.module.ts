@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home.component';
 import { EstadocitaDetallesComponent } from './estadocita-detalles/estadocita-detalles.component';
 import { RolesComponent } from './roles/roles.component';
 import { NgModule } from '@angular/core';
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'roles', component: RolesComponent },
   { path: 'roles/:rolId', component: RolDetallesComponent },
   { path: 'estadoscita', component: EstadoscitaComponent },
-  { path: 'estadoscita/:estadoCitaId', component: EstadocitaDetallesComponent }
+  { path: 'estadoscita/:estadoCitaId', component: EstadocitaDetallesComponent },
+  { path: 'home', component: HomeComponent }
 ];
 
 @NgModule({

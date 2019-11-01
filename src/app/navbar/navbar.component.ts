@@ -1,3 +1,4 @@
+import { EstalogueadoService } from './../servicios/estalogueado.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -8,41 +9,38 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  logeado : boolean = false;
+  logeado: boolean = false;
 
-  usuarioId : number;
-  usuario : string;
+  usuarioId: number;
+  usuario: string;
 
-  constructor(public router: Router) { }
+  constructor(private estalogueado: EstalogueadoService, public router: Router) {
+    estalogueado.isUserLoggedIn.subscribe(value => {
+      this.logeado = value;
+    });
+  }
 
   ngOnInit() {
-      if(this.logeado == false){
-        this.obtenerUsuario();
-      }
+      this.obtenerUsuario();
   }
 
-  obtenerUsuario(){
+  obtenerUsuario() {
     var usuario = JSON.parse(localStorage.getItem("usuario"));
-    if(usuario != null){
-      console.log("usuario " +usuario.usuario);
-      this.usuarioId= usuario.usuarioId;
+    if (usuario != null) {
+      this.usuarioId = usuario.usuarioId;
       this.usuario = usuario.usuario;
       this.logeado = true;
-      this.ngOnInit();
-    }else{
-      console.log("debe iniciar sesion " +usuario);
-    }
+    } 
   }
 
-  obtenerUserName(){
-    setTimeout(()=>{
+  obtenerUserName() {
+    setTimeout(() => {
 
-    },1000);
+    }, 1000);
     return this.usuario;
   }
 
-
-  logout(){
+  logout() {
     localStorage.removeItem("usuario");
     this.ngOnInit();
   }

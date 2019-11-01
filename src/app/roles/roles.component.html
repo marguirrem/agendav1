@@ -6,13 +6,72 @@
     </thead>
     <tbody>
         <tr *ngFor="let rol of roles">
-            <td>{{ rol.nombre }}</td>
-            <td>{{ rol.estado }}</td>
+            <td> <a [routerLink]="['/roles',rol.rolId]" > {{ rol.nombre }} </a> </td>
+            <td> 
+                <span class="text-info" *ngIf="rol.estado == 1"> Activo </span>
+                <span class="text-danger" *ngIf="rol.estado == 0"> Inactivo </span> 
+            </td>
             <td>
-                <a class="btn btn-info" [routerLink]="['/roles', rol.rolId]">
-                    VER
-                </a>
+                <button class="btn btn-info" (click)="modalEditar(true)">
+                    Acutalizar
+                </button>
+            </td>
+            <td>
+                <button class="btn btn-danger" (click)="modalEditar(true)">
+                    Eliminar
+                </button>
             </td>
         </tr>
     </tbody>
+    <!-- Modal -->
+    <div class="modal fade" id="editarRol" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Editar Rol</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" name="nombre">
+            </div>
+            <div class="form-group">
+                    <label for="nombre">Estado</label>
+                    <select class="form-control" name="estado" id="estado">
+                        <option value="0">Inactivo</option>
+                    </select>
+                </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
 </table>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Guardar</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
