@@ -1,7 +1,23 @@
 <h2>Detalles del Rol</h2>
-<div class="card">
-    {{ rol.nombre }}
-    <div class="card-body">
-        {{ rol.estado }}
-    </div>
-</div>
+
+<table class="table">
+    <tr>
+        <td class="text-light">
+            {{ rol.nombre }}
+        </td>
+        <td>
+            <span class="text-info" *ngIf="rol.estado == 1"> Activo </span>
+            <span class="text-danger" *ngIf="rol.estado == 0"> Inactivo </span>
+        </td>
+        <td>
+            <mat-icon (click)="toggleModalEditar()" class="text-light">create</mat-icon>
+        </td>
+    </tr>
+
+</table>
+<button id="toggleModalEditar" data-toggle="modal" data-target="#editarRol" style="display: none;">editar</button>
+
+<button type="button" (click)="actualizarRol()" style="display: none;" id="actualizarRol">
+    acutalizar
+</button>
+

@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    console.log("component : correo " +this.correo +" pass "+this.pass);
     return this.loginService.login(this.correo,this.pass).subscribe((resultado)=>{
       this.logeado = true;
       localStorage.setItem("usuario",JSON.stringify(resultado));

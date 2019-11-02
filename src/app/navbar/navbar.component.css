@@ -1,14 +1,6 @@
-.navbar-nav {
-    flex-direction: row;
-  }
-  
-  .nav-link {
-    padding-right: .5rem !important;
-    padding-left: .5rem !important;
-  }
-  
-  /* Fixes dropdown menus placed on the right side */
-  .ml-auto .dropdown-menu {
-    left: auto !important;
-    right: 0px;
+
+  .example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
   }

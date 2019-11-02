@@ -1,79 +1,25 @@
 <h2>Roles</h2>
-<table class="table table-striped">
-    <thead>
-        <th>Nombre</th>
-        <th>Estado</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let rol of roles">
-            <td> <a [routerLink]="['/roles',rol.rolId]" > {{ rol.nombre }} </a> </td>
-            <td> 
-                <span class="text-info" *ngIf="rol.estado == 1"> Activo </span>
-                <span class="text-danger" *ngIf="rol.estado == 0"> Inactivo </span> 
-            </td>
-            <td>
-                <button class="btn btn-info" (click)="modalEditar(true)">
-                    Acutalizar
-                </button>
-            </td>
-            <td>
-                <button class="btn btn-danger" (click)="modalEditar(true)">
-                    Eliminar
-                </button>
-            </td>
-        </tr>
-    </tbody>
-    <!-- Modal -->
-    <div class="modal fade" id="editarRol" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Editar Rol</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <input type="text" class="form-control" name="nombre">
-            </div>
-            <div class="form-group">
-                    <label for="nombre">Estado</label>
-                    <select class="form-control" name="estado" id="estado">
-                        <option value="0">Inactivo</option>
-                        <option value="1">Activo</option>
-                    </select>
-                </div>
-          </div>
-          <div class="modal-footer">
-              <button type="button" class="btn btn-primary">Guardar</button>
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-            
-          </div>
-        </div>
-      </div>
-    </div>
+<button id="btnModalCrear" class="btn btn-primary" data-toggle="modal" data-target="#crearRol">Crear Rol</button>
+
+<table class="table table-striped  ">
+  <thead>
+    <th class="text-light">Nombre</th>
+    <th class="text-light">Estado</th>
+    <th class="text-light">VER</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rol of roles">
+      <td class="text-info"> {{ rol.nombre }}</td>
+      <td>
+        <span class="text-info" *ngIf="rol.estado == 1"> Activo </span>
+        <span class="text-danger" *ngIf="rol.estado == 0"> Inactivo </span>
+      </td>
+      <td>
+          <a [routerLink]="['/roles',rol.rolId]">  <mat-icon>remove_red_eye</mat-icon> </a> 
+      </td>
+    </tr>
+  </tbody>
 </table>
 
+<button id="btnCrearRol" type="button" (click)="crearRol();" style="display: none;">crear</button>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary">Guardar</button>
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-            </div>
-          </div>
-        </div>
-      </div>

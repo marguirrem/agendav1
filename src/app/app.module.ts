@@ -19,6 +19,8 @@ import { EstadocitaDetallesComponent } from './estadocita-detalles/estadocita-de
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -35,10 +37,13 @@ import { HomeComponent } from './home/home.component';
     HomeComponent
   ],
   imports: [
+    MaterialModule,
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     SedesService,
