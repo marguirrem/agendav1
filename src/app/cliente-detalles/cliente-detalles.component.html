@@ -1,1 +1,31 @@
-<p>cliente-detalles works!</p>
+<h2>Detalles del Cliente</h2>
+
+<table class="table">
+    <tr>
+        <td class="text-primary">
+            {{ cliente.nombre }} {{ cliente.apellido }}
+        </td>
+        <td class="text-primary">
+            {{ cliente.correo }}
+        </td>
+        <td class="text-primary">
+                {{ cliente.direccion }}
+        </td>
+        <td class="text-primary">
+                {{ cliente.origen }}
+            </td>
+        <td>
+            <span class="text-info" *ngIf="cliente.estado == 1"> Activo </span>
+            <span class="text-danger" *ngIf="cliente.estado == 0"> Inactivo </span>
+        </td>
+        <td>
+            <mat-icon (click)="toggleModalEditar()" class="text-light">create</mat-icon>
+        </td>
+    </tr>
+
+</table>
+<button id="toggleModalEditarCliente" data-toggle="modal" data-target="#editarCliente" style="display: none;">editar</button>
+
+<button type="button" (click)="editarCliente()" style="display: none;" id="btnEditarCliente">
+    acutalizar
+</button>
