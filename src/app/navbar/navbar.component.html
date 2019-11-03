@@ -9,7 +9,7 @@
       <a mat-button [routerLink]="['/sedes']"> Sedes </a>
       <a mat-button [routerLink]="['/roles']">Roles</a>
       <a mat-button [routerLink]="['/estadoscita']"> Estado de Cita </a>
-      <a mat-button [routerLink]="'/create-contact'"> Create Contact </a>
+      <a mat-button [routerLink]="'/clientes'"> Clientes </a>
       <a mat-button (click)="logout()"> Salir ({{ obtenerUserName() }} ) </a>
       <a mat-button [routerLink]="'/login'" *ngIf="logeado == false"> Iniciar Sesión </a>
     </div>
@@ -22,7 +22,7 @@
       <a mat-list-item [routerLink]="['/sedes']" (click)="sidenav.toggle()"> Sedes </a>
       <a mat-list-item [routerLink]="['/roles']" (click)="sidenav.toggle()"> Roles </a>
       <a mat-list-item [routerLink]="['/estadoscita']" (click)="sidenav.toggle()">Estados de cita </a>
-      <a mat-list-item [routerLink]="'/create-contact'"> Create Contact </a>
+      <a mat-list-item [routerLink]="'/clientes'"> Clientes </a>
       <a mat-list-item (click)="logout()"> Cerrar Sesión </a>
       <a mat-list-item [routerLink]="'/login'" *ngIf="logeado == false"> Iniciar Sesión </a>
       <!-- <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a> -->

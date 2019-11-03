@@ -8,6 +8,8 @@ import { SedeDetallesComponent } from './sede-detalles/sede-detalles.component';
 import { RolDetallesComponent } from './rol-detalles/rol-detalles.component';
 import { EstadoscitaComponent } from './estadoscita/estadoscita.component';
 import { LoginComponent } from './login/login.component';
+import { ClientesComponent } from './clientes/clientes.component';
+import { ClienteDetallesComponent } from './cliente-detalles/cliente-detalles.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -17,7 +19,9 @@ const routes: Routes = [
   { path: 'roles/:rolId', component: RolDetallesComponent },
   { path: 'estadoscita', component: EstadoscitaComponent },
   { path: 'estadoscita/:estadoCitaId', component: EstadocitaDetallesComponent },
-  { path: 'home', component: HomeComponent }
+  { path: 'home', component: HomeComponent },
+  { path: 'clientes', component: ClientesComponent },
+  { path: 'clientes/:clienteId', component: ClienteDetallesComponent },
 ];
 
 @NgModule({

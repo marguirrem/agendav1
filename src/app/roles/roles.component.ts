@@ -10,6 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class RolesComponent implements OnInit {
 
   roles: any = [];
+
   constructor(
     private rolesService: RolesService,
     private snackBar: MatSnackBar) { }
@@ -30,7 +31,7 @@ export class RolesComponent implements OnInit {
     let nombre = (<HTMLInputElement>document.getElementById("rolNombreC")).value;
     //let nombre = document.getElementById("rolNombreC").value;
     //let estado = document.getElementById("rolEstadoC").value;
-    let estado = (<HTMLInputElement>document.getElementById("rolEstadoC")).value
+    let estado = (<HTMLInputElement>document.getElementById("rolEstadoC")).value;
 
     if (nombre == "") {
 

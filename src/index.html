@@ -158,7 +158,7 @@
       <div class="modal-body">
         <div class="form-group">
           <label for="nombre">Nombre</label>
-          <input type="text" class="form-control"  id="estadoNombreC">
+          <input type="text" class="form-control" id="estadoNombreC">
         </div>
         <div class="form-group">
           <label for="color">Color</label>
@@ -166,7 +166,7 @@
         </div>
         <div class="form-group">
           <label for="nombre">Estado</label>
-          <select class="form-control"  id="estadoEstadoC">
+          <select class="form-control" id="estadoEstadoC">
             <option value="0">Inactivo</option>
             <option value="1">Activo</option>
           </select>
@@ -197,9 +197,9 @@
           <input type="text" class="form-control" id="estadoNombreE">
         </div>
         <div class="form-group">
-            <label for="nombre">Color</label>
-            <input type="color" class="form-control" id="estadoColorE">
-          </div>
+          <label for="nombre">Color</label>
+          <input type="color" class="form-control" id="estadoColorE">
+        </div>
         <div class="form-group">
           <label for="nombre">Estado</label>
           <select class="form-control" id="estadoEstadoE">
@@ -216,30 +216,135 @@
   </div>
 </div>
 
+<!-- Crear Cliente-->
+<div class="modal fade" id="crearCliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Crear Cliente</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" id="clienteNombreC">
+        </div>
+        <div class="form-group">
+          <label for="nombre">Apellido</label>
+          <input type="text" class="form-control" id="clienteApellidoC">
+        </div>
+        <div class="form-group">
+          <label for="nombre">Correo</label>
+          <input type="email" class="form-control" id="clienteCorreoC">
+        </div>
+        <div class="form-group">
+          <label for="nombre">Dirección</label>
+          <input type="text" class="form-control" id="clienteDireccionC">
+        </div>
+        <div class="form-group">
+          <label for="nombre">Origen</label>
+          <input type="text" class="form-control" id="clienteOrigenC">
+        </div>
+        <div class="form-group">
+          <label for="nombre">Estado</label>
+          <select class="form-control" id="clienteEstadoC">
+            <option value="0">Inactivo</option>
+            <option value="1">Activo</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="crearCliente();">Crear</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Editar Cliente-->
+<div class="modal fade" id="editarCliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Cliente</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" id="clienteNombreE">
+        </div>
+        <div class="form-group">
+          <label for="nombre">Apellido</label>
+          <input type="text" class="form-control" id="clienteApellidoE">
+        </div>
+        <div class="form-group">
+          <label for="nombre">Correo</label>
+          <input type="email" class="form-control" id="clienteCorreoE">
+        </div>
+        <div class="form-group">
+          <label for="nombre">Dirección</label>
+          <input type="text" class="form-control" id="clienteDireccionE">
+        </div>
+        <div class="form-group">
+          <label for="nombre">Origen</label>
+          <input type="text" class="form-control" id="clienteOrigenE">
+        </div>
+        <div class="form-group">
+          <label for="nombre">Estado</label>
+          <select class="form-control" id="clienteEstadoE">
+            <option value="0">Inactivo</option>
+            <option value="1">Activo</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="crearCliente();">Crear</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <script>
   //rol
   function actualizarRol() {
     let nombre = document.getElementById("rolNombre");
-      document.getElementById("actualizarRol").click();
+    document.getElementById("actualizarRol").click();
   }
-  function crearRol(){
+  function crearRol() {
     document.getElementById("btnCrearRol").click();
   }
   //sede
-  function editarSede(){
+  function editarSede() {
     document.getElementById("btnEditarSede").click();
   }
-  function crearSede(){
+  function crearSede() {
     document.getElementById("btnCrearSede").click();
   }
-   //estado
-   function editarEstado(){
+  //estado
+  function editarEstado() {
     document.getElementById("btnEditarEstado").click();
   }
-  function crearEstado(){
+  function crearEstado() {
     document.getElementById("btnCrearEstado").click();
   }
+  //cliente
+   function editarCliente() {
+    document.getElementById("btnEditarEstado").click();
+  }
+  function crearCliente() {
+    document.getElementById("btnCrearCliente").click();
+  }
+
+  
 </script>
 
 

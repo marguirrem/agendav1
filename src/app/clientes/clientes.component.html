@@ -1,0 +1,26 @@
+<h2>Clientes</h2>
+<button id="btnModalCrearCliente" class="btn btn-primary" data-toggle="modal" data-target="#crearCliente">Crear Cliente</button>
+
+<table class="table table-striped">
+  <thead>
+    <th class="text-light">Nombre</th>
+    <th class="text-light">Estado</th>
+    <th class="text-light">VER</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cliente of clientes">
+      <td class="text-info"> {{ cliente.nombre }} {{ cliente.apellido }}</td>
+      <td>
+        <span class="text-info" *ngIf="cliente.estado == 1"> Activo </span>
+        <span class="text-danger" *ngIf="cliente.estado == 0"> Inactivo </span>
+      </td>
+      <td>
+        <a [routerLink]="['/clientes',cliente.clienteId]">  
+            <mat-icon>remove_red_eye</mat-icon> 
+        </a> 
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button id="btnCrearCliente" type="button" (click)="crearCliente();" style="display: none;">crear</button>

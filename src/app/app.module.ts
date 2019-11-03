@@ -21,6 +21,8 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { ClientesComponent } from './clientes/clientes.component';
+import { ClienteDetallesComponent } from './cliente-detalles/cliente-detalles.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { MaterialModule } from './material.module';
     EstadoscitaComponent,
     EstadocitaDetallesComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    ClientesComponent,
+    ClienteDetallesComponent
   ],
   imports: [
     MaterialModule,
