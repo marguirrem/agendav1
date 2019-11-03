@@ -32,15 +32,15 @@ export class RolDetallesComponent implements OnInit {
   toggleModalEditar() {
     let button = document.getElementById("toggleModalEditar");
     button.click();
-
-    document.getElementById("rolNombre").value = this.rol.nombre;
-    document.getElementById("rolEstado").value = this.rol.estado;
+    (<HTMLInputElement>document.getElementById("rolNombre")).value = this.rol.nombre; 
+    //document.getElementById("rolNombre").value = ;
+    (<HTMLInputElement>document.getElementById("rolEstado")).value = this.rol.estado;
+   // document.getElementById("rolEstado").value = this.rol.estado;
   }
-
- 
-
   actualizarRol(): void {
-    let nombre = document.getElementById("rolNombre");
+    //let nombre = document.getElementById("rolNombre");
+    let nombre  = (<HTMLInputElement>document.getElementById("rolNombre")); 
+    
     if (nombre.value == "") {
       nombre.classList.add("border-danger");
       nombre.placeholder = "Debe llenar este campo";
@@ -50,13 +50,14 @@ export class RolDetallesComponent implements OnInit {
       }, 2000);
 
     } else {
-      let estado = document.getElementById("rolEstado");
+      //let estado = document.getElementById("rolEstado");
+      let estado  = (<HTMLInputElement>document.getElementById("rolEstado"));
       this.rol.nombre = nombre.value;
       this.rol.estado = estado.value;
 
       this.rolesService.actualizarRol(this.rol).subscribe((resultado) => {
         this.toggleModalEditar();
-        this.snackBar.open('Rol acutalizado con exito!', 'X', {
+        this.snackBar.open('Rol actualizado con exito!', 'X', {
           duration: 3000
         });
       }, (error) => {
@@ -64,6 +65,4 @@ export class RolDetallesComponent implements OnInit {
       });
     }
   }
-
-
 }

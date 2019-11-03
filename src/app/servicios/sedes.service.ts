@@ -8,14 +8,13 @@ import { Observable } from 'rxjs';
 })
 export class SedesService {
 
-  BASE_URL ='http://localhost:8080/api/v1/sedes';
+  BASE_URL ='http://localhost:8080/api/v1/sedes/';
   
   constructor(private httpClient : HttpClient) { }
 
   obtenerSedes(): Observable<any>{
     console.log("httpclient");
     return this.httpClient.get(this.BASE_URL);
-    
   }
 
   obtenerUnaSede(id :string){
@@ -23,4 +22,11 @@ export class SedesService {
     return this.httpClient.get(url);
   }
 
+  editarSede(sede :any){
+    return this.httpClient.put(this.BASE_URL+sede.sedeId,sede);
+  }
+
+  crearSede(sede : any){
+    return this.httpClient.post(this.BASE_URL,sede);
+  }
 }

@@ -1,9 +1,21 @@
 <h2> Detalles de Sede</h2>
+<table class="table">
+    <tr>
+        <td class="text-light">
+            {{ sede.nombre }}
+        </td>
+        <td>
+            <span class="text-info" *ngIf="sede.estado  == 1"> Activo </span>
+            <span class="text-danger" *ngIf="sede.estado  == 0"> Inactivo </span>
+        </td>
+        <td>
+            <mat-icon (click)="toggleModalEditar()" class="text-light">create</mat-icon>
+        </td>
+    </tr>
 
-<div *ngIf="sede">
-  <h3>{{ sede.sedeId }}</h3>
-  <h4>{{ sede.nombre }}</h4>
-  <p *ngIf="sede.estado == 0">BAJA</p>
-  <p *ngIf="sede.estado == 1">ALTA</p>
+</table>
+<button id="toggleModalEditarSede" data-toggle="modal" data-target="#editarSede" style="display: none;">editar</button>
 
-</div>
+<button type="button" (click)="editarSede()" style="display: none;" id="btnEditarSede">
+    acutalizar
+</button>

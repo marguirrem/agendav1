@@ -18,4 +18,12 @@ export class EstadoscitaService {
     let url = this.BASE_URL +id;
     return this.httpClient.get(url);
   }
+
+  editarEstado(estadoCita :any){
+    return this.httpClient.put(this.BASE_URL+estadoCita.estadoCitaId,estadoCita);
+  }
+
+  crearEstado(estadoCita : any){
+    return this.httpClient.post(this.BASE_URL,estadoCita);
+  }
 }

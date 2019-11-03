@@ -1,20 +1,29 @@
 <p>Estados de Cita</p>
+<button id="btnModalCrearEstado" class="btn btn-primary" data-toggle="modal" data-target="#crearEstado" >Crear Estado </button>
 <table class="table table-striped"> 
     <thead>
-        <th>Nombre</th>
-        <th>Estado</th>
-        <th>Color</th>
+        <th class="text-light">Nombre</th>
+        <th class="text-light">Estado</th>
+        <th class="text-light">Color</th>
     </thead>
     <tbody>
         <tr *ngFor="let estadoCita of estadosCita">
-            <td> {{ estadoCita.nombre }}</td>
-            <td> {{ estadoCita.estado }}</td>
-            <td> {{ estadoCita.color  }}</td>
+            <td class="text-primary"> {{ estadoCita.nombre }}</td>
             <td>
-                <a class="btn btn-info" [routerLink]="['/estadoscita', estadoCita.estadoCitaId]">
-                        VER
+               <span class="text-primary" *ngIf="estadoCita.estado == 1"> Activo </span>
+               <span class="text-danger" *ngIf="estadoCita.estado == 0"> Inactivo </span>   
+            </td>
+            <td> 
+                <span class="col-md-3 text-primary"> {{ estadoCita.color }} </span>
+                <span class="col-md-2" [style.background-color]=" estadoCita.color"></span>
+            </td>
+            <td>
+                <a class="" [routerLink]="['/estadoscita', estadoCita.estadoCitaId]">
+                    <mat-icon>remove_red_eye</mat-icon>
                 </a>
             </td>
         </tr>
     </tbody>
 </table>
+
+<button id="btnCrearEstado" type="button" (click)="crearEstado()" style="display: none;">Crear</button>

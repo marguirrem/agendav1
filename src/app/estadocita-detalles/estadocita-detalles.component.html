@@ -1,12 +1,26 @@
-<div class="card">
-    {{ estadoCita.nombre }}
-    <div class="card-body">
-        <p>
-            {{ estadoCita.estado }}
-        </p>
-        <p>
-            {{ estadoCita.color }}
-        </p>
-        
-    </div>
-</div>
+<h2>Detalles Estado</h2>
+
+<table class="table">
+    <tr>
+        <td class="text-light">
+            {{ estadoCita.nombre }}
+        </td>
+        <td>
+            <span class="text-info" *ngIf="estadoCita.estado == 1"> Activo </span>
+            <span class="text-danger" *ngIf="estadoCita.estado == 0"> Inactivo </span>
+        </td>
+        <td>
+            <span [style.background-color]=" estadoCita.color" class="col-md-2"></span>
+        </td>
+        <td>
+            <mat-icon (click)="toggleModalEditar()" class="text-light">create</mat-icon>
+        </td>
+    </tr>
+
+</table>
+<button id="toggleModalEditarEstado" data-toggle="modal" data-target="#editarEstado"
+    style="display: none;">editar</button>
+
+<button type="button" (click)="editarEstado()" style="display: none;" id="btnEditarEstado">
+    acutalizar
+</button>

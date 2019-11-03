@@ -1,20 +1,23 @@
 <h3>Sedes</h3>
+<button id="btnModalCrearSede" class="button" class="btn btn-primary" data-toggle="modal" data-target="#crearSede">Crear Sede</button>
 <table class="table table-striped">
     <thead>
-        <th>Nombre</th>
-        <th>Estado</th>
+        <th class="text-light">Nombre</th>
+        <th class="text-light">Estado</th>
+        <th class="text-light">VER</th>
     </thead>
     <tbody>
         <tr *ngFor="let sede of sedes">
-            <td> {{sede.nombre}} </td>
+            <td class="text-primary"> {{sede.nombre}} </td>
             <td *ngIf="sede.estado == 0" class="text-danger"> BAJA </td>
             <td *ngIf="sede.estado == 1" class="text-info"> ALTA </td>
             <td>
                 <a [routerLink]="['/sedes', sede.sedeId]">
-                        VER
+                        <mat-icon>remove_red_eye</mat-icon>
                 </a>
             </td>
         </tr>
-        
     </tbody>
 </table>
+
+<button id="btnCrearSede" style="display: none;" (click)="crearSede()">Crear</button>

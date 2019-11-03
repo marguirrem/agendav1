@@ -27,8 +27,10 @@ export class RolesComponent implements OnInit {
   }
 
   crearRol() {
-    let nombre = document.getElementById("rolNombreC").value;
-    let estado = document.getElementById("rolEstadoC").value;
+    let nombre = (<HTMLInputElement>document.getElementById("rolNombreC")).value;
+    //let nombre = document.getElementById("rolNombreC").value;
+    //let estado = document.getElementById("rolEstadoC").value;
+    let estado = (<HTMLInputElement>document.getElementById("rolEstadoC")).value
 
     if (nombre == "") {
 
@@ -47,7 +49,5 @@ export class RolesComponent implements OnInit {
         console.log("Error: " + JSON.stringify(err));
       });
     }
-
   }
-
 }

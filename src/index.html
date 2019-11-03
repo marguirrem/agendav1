@@ -16,8 +16,6 @@
   <app-root></app-root>
 </body>
 
-
-
 <!-- Editar Rol -->
 <div class="modal fade" id="editarRol" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
@@ -45,12 +43,10 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" onclick="actualizarRol();">Guardar</button>
         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-
       </div>
     </div>
   </div>
 </div>
-
 
 <!-- Crear Rol -->
 <div class="modal fade" id="crearRol" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -79,25 +75,170 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" onclick="crearRol();">Crear</button>
         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- Editar Sede-->
+<div class="modal fade" id="editarSede" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Sede</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" name="nombre" id="sedeNombreE">
+        </div>
+        <div class="form-group">
+          <label for="nombre">Estado</label>
+          <select class="form-control" name="estado" id="sedeEstadoE">
+            <option value="0">Inactivo</option>
+            <option value="1">Activo</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="editarSede();">Guardar</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Crear Sede-->
+<div class="modal fade" id="crearSede" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Crear Sede</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" name="nombre" id="sedeNombreC">
+        </div>
+        <div class="form-group">
+          <label for="nombre">Estado</label>
+          <select class="form-control" name="estado" id="sedeEstadoC">
+            <option value="0">Inactivo</option>
+            <option value="1">Activo</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="crearSede();">Crear</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Crear Estado-->
+<div class="modal fade" id="crearEstado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Crear Estado</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control"  id="estadoNombreC">
+        </div>
+        <div class="form-group">
+          <label for="color">Color</label>
+          <input class="form-control" type="color" id="estadoColorC">
+        </div>
+        <div class="form-group">
+          <label for="nombre">Estado</label>
+          <select class="form-control"  id="estadoEstadoC">
+            <option value="0">Inactivo</option>
+            <option value="1">Activo</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="crearEstado();">Crear</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Editar Estado-->
+<div class="modal fade" id="editarEstado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Sede</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" id="estadoNombreE">
+        </div>
+        <div class="form-group">
+            <label for="nombre">Color</label>
+            <input type="color" class="form-control" id="estadoColorE">
+          </div>
+        <div class="form-group">
+          <label for="nombre">Estado</label>
+          <select class="form-control" id="estadoEstadoE">
+            <option value="0">Inactivo</option>
+            <option value="1">Activo</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="editarEstado();">Guardar</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
       </div>
     </div>
   </div>
 </div>
 
 
-
-
-
-
 <script>
+  //rol
   function actualizarRol() {
     let nombre = document.getElementById("rolNombre");
       document.getElementById("actualizarRol").click();
   }
-
   function crearRol(){
     document.getElementById("btnCrearRol").click();
+  }
+  //sede
+  function editarSede(){
+    document.getElementById("btnEditarSede").click();
+  }
+  function crearSede(){
+    document.getElementById("btnCrearSede").click();
+  }
+   //estado
+   function editarEstado(){
+    document.getElementById("btnEditarEstado").click();
+  }
+  function crearEstado(){
+    document.getElementById("btnCrearEstado").click();
   }
 </script>
 
